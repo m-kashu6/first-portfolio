@@ -425,6 +425,7 @@ h2 {
 .work__link {
   display: inline-block;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  text-decoration: underline;
 }
 .work__link:hover {
   opacity: 0.8;
@@ -844,7 +845,7 @@ textarea{
 
   .about-container {
     flex-direction: column;
-    margin-top: 50px;
+    margin-top: 20px;
   }
   .about-container h3 {
     text-align: center;
@@ -863,6 +864,10 @@ textarea{
   }
   .profile-text p {
     padding: 20px;
+  }
+
+  .profile-text p {
+    padding-inline: 0;
   }
   
   /* =============SKILLS============= */
