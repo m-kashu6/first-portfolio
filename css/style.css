@@ -972,8 +972,11 @@ textarea{
   }
 
   .works__note {
-    text-align: left;
     margin-top: 15px;
+  }
+
+  .works__note--2 {
+    text-align: left;
   }
 
   /* =============CONTACT============= */
