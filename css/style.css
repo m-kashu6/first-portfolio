@@ -767,7 +767,7 @@ textarea{
 
 @media (max-width: 750px) {
   .wrapper {
-    padding: 0 2%;
+    padding: 0;
   }
   .main-visual {
     background-size: 70%;
@@ -795,23 +795,51 @@ textarea{
     font-size: 1.3rem;
   }
 
+  .header {
+    padding: 20px;
+  }
+
   /* =============ABOUT============= */
+  #about h2 {
+    font-size: 4rem;
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 30px;
+  }
+
   .experience {
     width: 100%;
   }
   .experience dt {
     border-bottom: none;
+    padding: 20px;
   }
   .experience dl {
     width: 100%;
+  }
+
+  .experience dd {
+    padding: 20px;
+    padding-left: 0;
   }
 
   .experience__ttl2,
   .experience__ttl3 {
     width: 95%;
   }
+
+  .experience__list {
+    padding: 0;
+  }
+
+  .experience__ttl2::before {
+    width: 7px;
+    height: 7px;
+  }
+
   .about-container {
     flex-direction: column;
+    margin-top: 50px;
   }
   .about-container h3 {
     text-align: center;
@@ -933,6 +961,11 @@ textarea{
     margin-top: 0 !important;
   }
 
+  .works__note {
+    text-align: left;
+    margin-top: 15px;
+  }
+
   /* =============CONTACT============= */
 
   #contact dl {
@@ -974,9 +1007,6 @@ textarea{
     font-size: 2rem;
   }
   
-  .main-visual {
-    background-attachment: initial;
-  }
   footer {
     margin-top: 0;
   }
@@ -998,7 +1028,12 @@ textarea{
   .fas {
     font-size: calc(25 / 750 * 100vw);
     font-weight: 700;
-   margin: 0 auto;
+    margin: 0 auto;
+    line-height: 2 !important;
+  }
+
+  .nav02 {
+    padding-inline: 20px;
   }
 }
 
