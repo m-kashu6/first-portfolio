@@ -772,6 +772,7 @@ textarea{
   .main-visual {
     background-size: 70%;
     height: 100vh;
+    background-attachment: initial;
   }
   .main-text {
     top: 50%;
