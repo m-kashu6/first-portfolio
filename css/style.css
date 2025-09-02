@@ -200,7 +200,7 @@ h2 {
 
 .experience dl:nth-child(n + 2) {
   display: flex;
-  justify-content: center;
+  justify-content: start;
   margin: 0 auto;
   border-bottom: 1px solid #000;
   text-align: center;
@@ -211,7 +211,7 @@ h2 {
 .experience dt {
   float: left;
   padding: 30px;
-  width: 30%;
+  /* width: 30%; */
   text-align: left;
 }
 .experience dd {
@@ -395,6 +395,17 @@ h2 {
   display: block;
   margin-bottom: 30px;
 }
+
+.works__note--2 {
+  margin-top: 30px;
+}
+
+.works-content02__box {
+  border: 1px solid #000;
+  margin-top: 30px;
+  padding-inline: 20px;
+}
+
 .works-bigbox {
   display: flex;
   flex-wrap: wrap;
