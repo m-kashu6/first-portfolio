@@ -804,7 +804,7 @@ textarea{
   #about {
     margin-top: 100px;
   }
-  
+
   #about h2 {
     font-size: 4rem;
     text-align: center;
@@ -1024,14 +1024,14 @@ textarea{
 
   /* PAGE=TOPーBTN */
   .page-top {
-    width: calc(60 / 750 * 100vw);
-    height: calc(60 / 750 * 100vw);
+    width: calc(80 / 750 * 100vw);
+    height: calc(80 / 750 * 100vw);
     border-radius: 50%;
     
   }
   .fa,
   .fas {
-    font-size: calc(25 / 750 * 100vw);
+    font-size: calc(34 / 750 * 100vw);
     font-weight: 700;
     margin: 0 auto;
     line-height: 2 !important;
