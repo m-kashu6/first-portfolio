@@ -801,6 +801,9 @@ textarea{
   }
 
   /* =============ABOUT============= */
+  #about {
+    margin-top: 100px;
+  }
   #about h2 {
     font-size: 4rem;
     text-align: center;
