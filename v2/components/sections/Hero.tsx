@@ -1,13 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-
-const HeroScene = dynamic(
-  () => import("@/components/three/HeroScene").then((m) => m.HeroScene),
-  { ssr: false }
-);
 
 // Letter-by-letter stagger animation
 function KineticTitle() {
@@ -167,14 +161,6 @@ export function Hero() {
             Available · 2026
           </span>
         </div>
-      </motion.div>
-
-      {/* 3D layer (desktop only) */}
-      <motion.div
-        style={{ opacity }}
-        className="absolute inset-0 z-10 hidden md:block md:mix-blend-multiply"
-      >
-        <HeroScene />
       </motion.div>
 
       {/* Mobile: bottom-right color block (graphic accent) */}
