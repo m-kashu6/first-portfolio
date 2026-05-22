@@ -1,0 +1,68 @@
+# Maki Kashu — Frontend Engineer Portfolio
+
+> Personal portfolio of Maki Kashu (嘉数 真希), a Frontend Engineer based in Osaka, Japan. Born 1996. Former beauty advisor at The Ginza (3 years), turned frontend engineer after vocational web training. Worked at Dawn Inc. (2023.12 – 2025.04). Currently freelancing in frontend engineering while moonlighting as a barista. International experience in the Philippines, Australia, and the United States.
+
+## About
+
+- Name: Maki Kashu / 嘉数 真希
+- Role: Frontend Engineer
+- Location: Osaka, Japan
+- Born: 1996
+- Languages: Japanese (Native), English (Intermediate+)
+- Email: 2018casmakikashu@gmail.com
+
+## Skills
+
+### Design Tools
+- Adobe Illustrator
+- Adobe Photoshop
+- Figma
+- Adobe XD
+
+### Frontend
+- HTML, CSS / Sass, JavaScript
+- TypeScript (learning), React (learning), Next.js (learning), Tailwind (learning)
+
+### Tooling & Misc
+- Git / GitHub
+- Astro (learning)
+- Netlify / Vercel
+- Web Accessibility
+
+## Career Timeline
+
+- 1996: Born in Osaka, Japan
+- 2015 – 2017: Lived abroad — Philippines, Australia, United States (~2 years total)
+- 2018 – 2021: Beauty Advisor at The Ginza Co., Ltd. (3 years)
+- 2023 (4 months): Vocational training in Web Design / Frontend Engineering
+- 2023.12 – 2025.04: Frontend Engineer at Dawn Inc.
+- 2025 – Now: Freelance frontend engineer + part-time barista
+
+## Works (selected — all training-era practice from before 2024)
+
+- Star Planets — Graduation project from vocational school (mock beauty salon website)
+- Koyuki.art — Illustration portfolio site built for an illustrator friend
+- Various practice / 模写 projects: Cafe site, Recipe site, Photobook LP, 2-column layout
+- Banner designs (Photoshop / Illustrator)
+
+## Code Stock
+
+Professional code from Dawn Inc. era, deployed at:
+https://maki-k-codestock.netlify.app/
+
+Built with Astro + microCMS. Includes CSS animations, JavaScript components, and UI snippets.
+
+## Contact
+
+- Email: 2018casmakikashu@gmail.com
+- Portfolio: https://maki-kashu-pf.vercel.app/
+- Code Stock: https://maki-k-codestock.netlify.app/
+
+## Site Tech Stack
+
+This portfolio is built with:
+- Next.js 16 (App Router) + TypeScript
+- Tailwind CSS v4
+- Framer Motion (animations)
+- Lenis (smooth scroll)
+- Deployed on Vercel
