@@ -1,13 +1,19 @@
 import { HeroVariantA } from "@/components/sections/hero-variants/HeroVariantA";
 import { HeroVariantB } from "@/components/sections/hero-variants/HeroVariantB";
 import { HeroVariantC } from "@/components/sections/hero-variants/HeroVariantC";
+import { HeroVariantD } from "@/components/sections/hero-variants/HeroVariantD";
+import { HeroVariantE } from "@/components/sections/hero-variants/HeroVariantE";
 import { HeroVariantF } from "@/components/sections/hero-variants/HeroVariantF";
+import { HeroVariantG } from "@/components/sections/hero-variants/HeroVariantG";
 
 const variants = [
   { id: "A", label: "Risograph 重ね刷り", component: HeroVariantA },
   { id: "B", label: "Halftone ドット背景", component: HeroVariantB },
   { id: "C", label: "写真コラージュ風", component: HeroVariantC },
+  { id: "D", label: "タロットカード風", component: HeroVariantD },
+  { id: "E", label: "コミック 4 コマ", component: HeroVariantE },
   { id: "F", label: "波形下辺", component: HeroVariantF },
+  { id: "G", label: "縦ストライプ Bauhaus", component: HeroVariantG },
 ];
 
 export default function HeroPreviewPage() {
