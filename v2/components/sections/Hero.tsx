@@ -117,79 +117,89 @@ export function Hero() {
         </div>
       </div>
 
-      {/* ==================== MOBILE (Diagonal split) ==================== */}
+      {/* ==================== MOBILE (Frame layout) ==================== */}
 
-      {/* Diagonal orange block (top-left half) */}
+      {/* Top edge — "FRONTEND  ·  ENGINEER" */}
       <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4, duration: 0.7 }}
         style={{ opacity }}
-        className="pointer-events-none absolute inset-0 z-[1] overflow-hidden md:hidden"
+        className="pointer-events-none absolute inset-x-3 top-[12vh] z-[3] flex items-center justify-between font-display text-[8vw] tracking-tight text-ink md:hidden"
       >
-        <motion.div
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 1.0, ease: [0.85, 0, 0.15, 1] }}
-          className="absolute inset-0 bg-accent"
-          style={{ clipPath: "polygon(0 0, 100% 0, 100% 38%, 0 62%)" }}
-        />
-        {/* Subtle dashed diagonal line just inside the cut */}
-        <motion.svg
-          initial={{ pathLength: 0, opacity: 0 }}
-          animate={{ pathLength: 1, opacity: 0.5 }}
-          transition={{ delay: 1.1, duration: 1.2 }}
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-          className="absolute inset-0 h-full w-full"
-          aria-hidden="true"
-        >
-          <motion.line
-            x1="100"
-            y1="42"
-            x2="0"
-            y2="66"
-            stroke="#1A1A1A"
-            strokeWidth="0.4"
-            strokeDasharray="2 2"
-          />
-        </motion.svg>
+        <span>FRONTEND</span>
+        <span className="text-accent">★</span>
+        <span>ENGINEER</span>
       </motion.div>
 
-      {/* Mobile typo — MAKI on orange, KASHU on cream */}
+      {/* Left vertical — "MAKI" */}
       <motion.div
-        style={{ y, opacity }}
-        className="pointer-events-none absolute inset-0 z-[3] flex flex-col justify-center px-4 md:hidden"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.55, duration: 0.7 }}
+        style={{ opacity }}
+        className="pointer-events-none absolute left-0 top-1/2 z-[3] -translate-y-1/2 md:hidden"
       >
-        <motion.span
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
-          className="block self-start pl-2 font-display text-[24vw] leading-[0.85] tracking-tight text-cream"
+        <p
+          className="origin-center -rotate-180 font-display text-[18vw] leading-[0.85] tracking-tight text-accent"
+          style={{ writingMode: "vertical-rl" }}
         >
           MAKI
-        </motion.span>
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
-          className="mt-4 block self-end pr-2 font-display italic text-[24vw] leading-[0.85] tracking-tight text-ink"
-        >
-          KASHU
-        </motion.span>
+        </p>
       </motion.div>
 
-      {/* Role label — bottom, mobile */}
+      {/* Right vertical — "KASHU" */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.7, duration: 0.7 }}
+        style={{ opacity }}
+        className="pointer-events-none absolute right-0 top-1/2 z-[3] -translate-y-1/2 md:hidden"
+      >
+        <p
+          className="font-display text-[18vw] leading-[0.85] tracking-tight text-ink"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          KASHU
+        </p>
+      </motion.div>
+
+      {/* Bottom edge — "2026  ·  PORTFOLIO" */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.3, duration: 0.7 }}
+        transition={{ delay: 0.85, duration: 0.7 }}
         style={{ opacity }}
-        className="pointer-events-none absolute inset-x-0 bottom-[14vh] z-[4] flex flex-col items-center gap-1 md:hidden"
+        className="pointer-events-none absolute inset-x-3 bottom-[14vh] z-[3] flex items-center justify-between font-display text-[8vw] tracking-tight text-ink md:hidden"
       >
-        <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-ink">
-          Frontend / Engineer
-        </p>
-        <p className="font-serif-jp text-base italic text-ink-soft">
-          丁寧に、長く使える Web を。
-        </p>
+        <span>2026</span>
+        <span className="text-accent">●</span>
+        <span>PORTFOLIO</span>
+      </motion.div>
+
+      {/* Center content inside the frame */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 1.0, duration: 0.8 }}
+        style={{ opacity }}
+        className="pointer-events-none absolute inset-x-[18vw] top-1/2 z-[4] -translate-y-1/2 md:hidden"
+      >
+        <div className="flex flex-col items-center gap-3 border-2 border-ink bg-cream px-4 py-6 text-center" style={{ boxShadow: "4px 4px 0 0 var(--color-accent)" }}>
+          <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-mute">
+            N° 001 — Issue
+          </p>
+          <p className="font-display text-3xl leading-none text-ink">
+            Maki Kashu
+          </p>
+          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-mute">
+            1996 / Osaka
+          </p>
+          <span className="my-1 h-px w-12 bg-ink/30" />
+          <p className="font-serif-jp text-sm italic leading-snug text-ink-soft">
+            丁寧に、長く<br />使える Web を。
+          </p>
+        </div>
       </motion.div>
 
       {/* Bottom strap */}
