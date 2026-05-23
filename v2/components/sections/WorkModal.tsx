@@ -103,7 +103,7 @@ export function WorkModal({ work, onClose }: Props) {
                     alt={work.imageAlt}
                     fill
                     sizes="(max-width: 768px) 100vw, 70vw"
-                    className="object-cover"
+                    className="object-contain p-6"
                   />
                 </div>
 

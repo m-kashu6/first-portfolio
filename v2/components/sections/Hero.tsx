@@ -3,45 +3,18 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-// Letter-by-letter stagger animation
-function KineticTitle() {
-  const lines = [
-    { text: "MAKI", className: "text-ink/90" },
-    { text: "KASHU", className: "text-accent" },
-  ];
-
+// Desktop kinetic title (unchanged)
+function DesktopTitle() {
   return (
-    <h1 className="select-none font-display leading-[0.82] tracking-tight">
-      {/* Mobile: stacked */}
-      <span className="flex flex-col md:hidden">
-        {lines.map((line, li) => (
-          <motion.span
-            key={line.text}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 + li * 0.15, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
-            className={`block text-[24vw] ${line.className}`}
-          >
-            {line.text}
-          </motion.span>
-        ))}
-      </span>
-
-      {/* Desktop: inline */}
-      <motion.span
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4, duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
-        className="hidden whitespace-nowrap text-[20vw] md:inline-block"
-      >
-        {lines.map((line, li) => (
-          <span key={line.text} className={line.className}>
-            {line.text}
-            {li === 0 && <span>&nbsp;</span>}
-          </span>
-        ))}
-      </motion.span>
-    </h1>
+    <motion.h1
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.4, duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}
+      className="select-none whitespace-nowrap font-display text-[20vw] leading-[0.82] tracking-tight"
+    >
+      <span className="text-ink/90">MAKI</span>{" "}
+      <span className="text-accent">KASHU</span>
+    </motion.h1>
   );
 }
 
@@ -105,117 +78,29 @@ export function Hero() {
         </motion.div>
       </div>
 
-      {/* Background kinetic typo (above graphic band on mobile) */}
+      {/* ==================== DESKTOP ==================== */}
+
       <motion.div
         style={{ y, opacity }}
-        className="pointer-events-none absolute inset-0 z-[5] flex items-center justify-center md:z-0"
+        className="pointer-events-none absolute inset-0 z-0 hidden items-center justify-center md:flex"
       >
-        <KineticTitle />
+        <DesktopTitle />
       </motion.div>
 
-
-      {/* Vertical side label */}
+      {/* Vertical side label — desktop */}
       <div className="pointer-events-none absolute right-2 top-1/2 z-20 hidden -translate-y-1/2 md:block">
         <p className="origin-center -rotate-90 whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.3em] text-mute">
           Maki Kashu · 1996 · Osaka · JP
         </p>
       </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 0.6 }}
-        className="pointer-events-none absolute left-1 top-1/2 z-20 -translate-y-1/2 md:hidden"
-      >
-        <p
-          className="whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.3em] text-mute"
-          style={{ writingMode: "vertical-rl" }}
-        >
-          MAKI KASHU · 1996 · OSAKA
-        </p>
-      </motion.div>
 
-      {/* Bracket / corner marks */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 0.8 }}
-        className="pointer-events-none absolute inset-0 z-20"
-      >
-        <div className="absolute left-3 top-20 h-3 w-3 border-l border-t border-ink/50 md:hidden" />
-        <div className="absolute right-3 top-20 h-3 w-3 border-r border-t border-ink/50 md:hidden" />
-        <div className="absolute left-3 bottom-24 h-3 w-3 border-b border-l border-ink/50 md:hidden" />
-        <div className="absolute right-3 bottom-24 h-3 w-3 border-b border-r border-ink/50 md:hidden" />
-      </motion.div>
-
-      {/* Status pill */}
-      <motion.div
-        initial={{ opacity: 0, y: -10, scale: 0.9 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ delay: 1.6, duration: 0.6, type: "spring" }}
-        style={{ opacity }}
-        className="pointer-events-none absolute left-1/2 top-[26vh] z-20 -translate-x-1/2 md:hidden"
-      >
-        <div className="flex items-center gap-2 rounded-full border border-ink/40 bg-cream/80 px-3 py-1 backdrop-blur">
-          <span className="h-1.5 w-1.5 rounded-full bg-accent animate-blink" />
-          <span className="font-mono text-[9px] uppercase tracking-[0.3em] text-ink-soft">
-            Available · 2026
-          </span>
-        </div>
-      </motion.div>
-
-      {/* Mobile: bottom-right color block (graphic accent) */}
-      <motion.div
-        style={{ opacity }}
-        className="pointer-events-none absolute bottom-0 right-0 z-[2] h-[40vh] w-[58vw] overflow-hidden md:hidden"
-      >
-        <motion.div
-          initial={{ scaleY: 0 }}
-          animate={{ scaleY: 1 }}
-          transition={{ delay: 0.3, duration: 1.1, ease: [0.85, 0, 0.15, 1] }}
-          style={{ originY: 1 }}
-          className="absolute inset-0 bg-accent"
-        />
-        {/* Caption inside block */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.6, duration: 0.6 }}
-          className="absolute inset-x-4 bottom-24 flex flex-col gap-1 font-mono text-[10px] uppercase tracking-[0.3em] text-cream/90"
-        >
-          <span>Portfolio</span>
-          <span>Vol. 01 &mdash; 2026</span>
-        </motion.div>
-        {/* Big issue number in the block */}
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 0.18, y: 0 }}
-          transition={{ delay: 1.4, duration: 0.7 }}
-          className="absolute right-2 top-2 font-display text-7xl leading-none text-cream"
-        >
-          02
-        </motion.span>
-      </motion.div>
-
-      {/* Mincho italic statement — bottom, mobile */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.7, duration: 0.7 }}
-        style={{ opacity }}
-        className="pointer-events-none absolute left-6 bottom-[24vh] z-30 max-w-[55vw] md:hidden"
-      >
-        <p className="font-serif-jp text-lg italic leading-snug text-ink">
-          丁寧に、長く<br />使える Web を。
-        </p>
-      </motion.div>
-
-      {/* Marquee — top */}
-      <div className="pointer-events-none absolute inset-x-0 top-[8vh] z-10 overflow-hidden md:top-[20vh]">
+      {/* Desktop marquee */}
+      <div className="pointer-events-none absolute inset-x-0 top-[20vh] z-10 hidden overflow-hidden md:block">
         <div className="flex animate-marquee whitespace-nowrap">
           {[0, 1].map((i) => (
             <div
               key={i}
-              className="mr-12 flex shrink-0 items-center gap-12 font-display text-[6vw] tracking-wider text-ink/15 md:text-[5vw]"
+              className="mr-12 flex shrink-0 items-center gap-12 font-display text-[5vw] tracking-wider text-ink/15"
             >
               <span>FRONTEND</span>
               <span>·</span>
@@ -232,30 +117,123 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Second marquee — bottom mobile */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-[15vh] z-10 overflow-hidden md:hidden">
-        <div
-          className="flex animate-marquee whitespace-nowrap"
-          style={{ animationDirection: "reverse", animationDuration: "40s" }}
+      {/* ==================== MOBILE (Apartamento / pop-surreal) ==================== */}
+
+      {/* Background shapes — scattered */}
+      <motion.div
+        style={{ opacity }}
+        className="pointer-events-none absolute inset-0 z-[1] overflow-hidden md:hidden"
+      >
+        {/* Orange disc — top-left */}
+        <motion.div
+          initial={{ scale: 0, rotate: -30 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ delay: 0.4, duration: 0.9, type: "spring", bounce: 0.4 }}
+          className="absolute -left-6 top-[18vh] h-32 w-32 rounded-full bg-accent"
+        />
+        {/* Pink square — mid-right, rotated */}
+        <motion.div
+          initial={{ scale: 0, rotate: 0 }}
+          animate={{ scale: 1, rotate: 12 }}
+          transition={{ delay: 0.6, duration: 0.9, type: "spring", bounce: 0.5 }}
+          className="absolute right-3 top-[40vh] h-28 w-28"
+          style={{ background: "#F49ABF" }}
+        />
+        {/* Navy triangle — bottom-left */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5, rotate: -20 }}
+          animate={{ opacity: 1, scale: 1, rotate: -8 }}
+          transition={{ delay: 0.8, duration: 0.9 }}
+          className="absolute left-6 bottom-[18vh] h-0 w-0"
+          style={{
+            borderLeft: "55px solid transparent",
+            borderRight: "55px solid transparent",
+            borderBottom: "95px solid #1B2C56",
+          }}
+        />
+        {/* Yellow small circle — center-ish */}
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ delay: 1.0, duration: 0.6, type: "spring" }}
+          className="absolute right-12 top-[28vh] h-7 w-7 rounded-full"
+          style={{ background: "#FFD93D" }}
+        />
+        {/* Tiny squiggle (dashed line) — bottom right */}
+        <motion.svg
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: 1 }}
+          transition={{ delay: 1.2, duration: 1 }}
+          viewBox="0 0 100 30"
+          className="absolute right-4 bottom-[28vh] h-7 w-24"
+          aria-hidden="true"
         >
-          {[0, 1].map((i) => (
-            <div
-              key={i}
-              className="mr-8 flex shrink-0 items-center gap-8 font-mono text-[10px] uppercase tracking-[0.4em] text-ink/40"
-            >
-              <span>★</span>
-              <span>Frontend Engineer</span>
-              <span>·</span>
-              <span>Based in Osaka</span>
-              <span>·</span>
-              <span>Open for work</span>
-              <span>·</span>
-              <span>Since 2023</span>
-              <span>·</span>
-            </div>
-          ))}
+          <motion.path
+            d="M 2 15 Q 15 2, 28 15 T 54 15 T 80 15 T 98 15"
+            stroke="#1B2C56"
+            strokeWidth="3"
+            strokeLinecap="round"
+            fill="none"
+          />
+        </motion.svg>
+      </motion.div>
+
+      {/* Mobile typo — KASHU on top right, MAKI offset on left */}
+      <motion.div
+        style={{ y, opacity }}
+        className="pointer-events-none absolute inset-0 z-[3] flex flex-col justify-center px-4 md:hidden"
+      >
+        <motion.span
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.5, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
+          className="block self-end pr-2 font-display text-[26vw] leading-[0.85] tracking-tight text-accent"
+        >
+          KASHU
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.65, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
+          className="-mt-2 block self-start pl-2 font-display text-[22vw] leading-[0.85] tracking-tight text-ink"
+          style={{ fontStyle: "italic" }}
+        >
+          MAKI
+        </motion.span>
+      </motion.div>
+
+      {/* Role label — bottom area, mobile */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.3, duration: 0.7 }}
+        style={{ opacity }}
+        className="pointer-events-none absolute inset-x-0 bottom-[16vh] z-[4] flex flex-col items-center gap-1 md:hidden"
+      >
+        <p className="font-mono text-[10px] uppercase tracking-[0.4em] text-ink">
+          Frontend / Engineer
+        </p>
+        <p className="font-serif-jp text-base italic text-ink-soft">
+          丁寧に、長く使える Web を。
+        </p>
+      </motion.div>
+
+      {/* "001" sticker — top center, mobile */}
+      <motion.div
+        initial={{ opacity: 0, rotate: -12, scale: 0.6 }}
+        animate={{ opacity: 1, rotate: -6, scale: 1 }}
+        transition={{ delay: 1.5, duration: 0.6, type: "spring", bounce: 0.5 }}
+        style={{ opacity }}
+        className="pointer-events-none absolute left-6 top-[12vh] z-[4] md:hidden"
+      >
+        <div
+          className="flex flex-col items-start border-2 border-ink bg-cream px-2 py-1 font-mono text-[10px] uppercase tracking-[0.25em]"
+          style={{ boxShadow: "3px 3px 0 0 #1B2C56" }}
+        >
+          <span className="text-mute">Issue</span>
+          <span className="font-display text-2xl leading-none text-ink">001</span>
         </div>
-      </div>
+      </motion.div>
 
       {/* Bottom strap */}
       <motion.div

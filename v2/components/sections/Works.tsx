@@ -164,7 +164,7 @@ function WorkCard({
           alt={work.imageAlt}
           fill
           sizes="(max-width: 768px) 78vw, 30vw"
-          className="object-cover transition-transform duration-700 group-hover:scale-110"
+          className="object-contain p-3 transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/20" />
         <div className="absolute left-4 top-4 font-mono text-[10px] uppercase tracking-[0.3em] text-cream mix-blend-difference">

@@ -11,14 +11,14 @@ export function Loader() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Only show loader on first visit per browser session
-    const already = window.sessionStorage.getItem(STORAGE_KEY);
+    // Only show loader on first visit (persists across tabs/sessions)
+    const already = window.localStorage.getItem(STORAGE_KEY);
     if (already) {
       setDone(true);
       return;
     }
     setShouldShow(true);
-    window.sessionStorage.setItem(STORAGE_KEY, "1");
+    window.localStorage.setItem(STORAGE_KEY, "1");
 
     let frame = 0;
     const total = 80; // ~1.3s at 60fps

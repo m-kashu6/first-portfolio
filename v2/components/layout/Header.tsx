@@ -63,7 +63,6 @@ export function Header() {
           }`}
         >
           <span>Osaka / JPN</span>
-          <span className="animate-blink">●</span>
           <span>Portfolio · 2026</span>
         </div>
       </header>
