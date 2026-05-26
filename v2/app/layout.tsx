@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   publisher: "Maki Kashu",
   keywords: [
     "Maki Kashu",
-    "嘉数真希",
+    "賀集真衣",
     "Frontend Engineer",
     "フロントエンドエンジニア",
     "Portfolio",
@@ -141,7 +141,7 @@ const jsonLdPerson = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Maki Kashu",
-  alternateName: "嘉数 真希",
+  alternateName: "賀集 真衣",
   description:
     "1996年大阪生まれのフロントエンドエンジニア。元美容部員。Web デザインとコーディングを軸に活動。",
   jobTitle: "Frontend Engineer",

@@ -1,6 +1,6 @@
 export const profile = {
   name: "Maki Kashu",
-  nameJa: "嘉数 真希",
+  nameJa: "賀集 真衣",
   role: "Frontend Engineer",
   location: "Osaka, Japan",
   email: "2018casmakikashu@gmail.com",

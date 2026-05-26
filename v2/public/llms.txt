@@ -1,10 +1,10 @@
 # Maki Kashu — Frontend Engineer Portfolio
 
-> Personal portfolio of Maki Kashu (嘉数 真希), a Frontend Engineer based in Osaka, Japan. Born 1996. Former beauty advisor at The Ginza (3 years), turned frontend engineer after vocational web training. Worked at Dawn Inc. (2023.12 – 2025.04). Currently freelancing in frontend engineering while moonlighting as a barista. International experience in the Philippines, Australia, and the United States.
+> Personal portfolio of Maki Kashu (賀集 真衣), a Frontend Engineer based in Osaka, Japan. Born 1996. Former beauty advisor at The Ginza (3 years), turned frontend engineer after vocational web training. Worked at Dawn Inc. (2023.12 – 2025.04). Currently freelancing in frontend engineering while moonlighting as a barista. International experience in the Philippines, Australia, and the United States.
 
 ## About
 
-- Name: Maki Kashu / 嘉数 真希
+- Name: Maki Kashu / 賀集 真衣
 - Role: Frontend Engineer
 - Location: Osaka, Japan
 - Born: 1996
