@@ -3,6 +3,7 @@ import Image from "next/image";
 const PORTFOLIO_URL = "https://maki-kashu-pf.vercel.app";
 const CODESTOCK_URL = "https://maki-k-codestock.netlify.app";
 const EMAIL = "2018casmakikashu@gmail.com";
+const PHONE = "080-2444-3411"; // ← 旧サイトから引用、必要なら差し替え
 const LINE_ID = "@your-line-id"; // ← 後で差し替え
 
 // QR via external service. 300x300 PNG, accent color foreground on cream
@@ -125,6 +126,23 @@ function CardFront() {
 }
 
 function CardBack() {
+  const FieldLabel = ({ children }: { children: React.ReactNode }) => (
+    <p
+      className="font-mono uppercase tracking-[0.3em] text-mute"
+      style={{ fontSize: "5pt" }}
+    >
+      {children}
+    </p>
+  );
+  const FieldValue = ({ children }: { children: React.ReactNode }) => (
+    <p
+      className="font-jp font-bold leading-tight text-ink"
+      style={{ fontSize: "7pt" }}
+    >
+      {children}
+    </p>
+  );
+
   return (
     <div
       className="relative overflow-hidden bg-cream shadow-2xl"
@@ -133,66 +151,27 @@ function CardBack() {
       {/* Top thin accent line */}
       <div className="absolute inset-x-0 top-0 h-[1.5mm] bg-accent" />
 
-      {/* Left: contact info */}
-      <div className="absolute left-[5mm] top-[5mm] flex flex-col gap-[3mm]">
+      {/* Left column: 5 contact items */}
+      <div className="absolute left-[5mm] top-[5mm] flex flex-col gap-[2mm]">
         <div>
-          <p
-            className="font-mono uppercase tracking-[0.3em] text-mute"
-            style={{ fontSize: "5pt" }}
-          >
-            Email
-          </p>
-          <p
-            className="font-jp font-bold text-ink"
-            style={{ fontSize: "7.5pt" }}
-          >
-            {EMAIL}
-          </p>
+          <FieldLabel>Email</FieldLabel>
+          <FieldValue>{EMAIL}</FieldValue>
         </div>
-
         <div>
-          <p
-            className="font-mono uppercase tracking-[0.3em] text-mute"
-            style={{ fontSize: "5pt" }}
-          >
-            Portfolio
-          </p>
-          <p
-            className="font-jp font-bold text-ink"
-            style={{ fontSize: "7pt" }}
-          >
-            maki-kashu-pf.vercel.app
-          </p>
+          <FieldLabel>Tel</FieldLabel>
+          <FieldValue>{PHONE}</FieldValue>
         </div>
-
         <div>
-          <p
-            className="font-mono uppercase tracking-[0.3em] text-mute"
-            style={{ fontSize: "5pt" }}
-          >
-            Code Stock
-          </p>
-          <p
-            className="font-jp font-bold text-ink"
-            style={{ fontSize: "7pt" }}
-          >
-            maki-k-codestock.netlify.app
-          </p>
+          <FieldLabel>Portfolio</FieldLabel>
+          <FieldValue>maki-kashu-pf.vercel.app</FieldValue>
         </div>
-
         <div>
-          <p
-            className="font-mono uppercase tracking-[0.3em] text-mute"
-            style={{ fontSize: "5pt" }}
-          >
-            LINE
-          </p>
-          <p
-            className="font-jp font-bold text-ink"
-            style={{ fontSize: "7.5pt" }}
-          >
-            {LINE_ID}
-          </p>
+          <FieldLabel>Code Stock</FieldLabel>
+          <FieldValue>maki-k-codestock.netlify.app</FieldValue>
+        </div>
+        <div>
+          <FieldLabel>LINE</FieldLabel>
+          <FieldValue>{LINE_ID}</FieldValue>
         </div>
       </div>
 
@@ -200,7 +179,7 @@ function CardBack() {
       <div className="absolute right-[5mm] top-[5mm] flex flex-col items-center gap-[1.5mm]">
         <div
           className="overflow-hidden border border-ink"
-          style={{ width: "28mm", height: "28mm" }}
+          style={{ width: "26mm", height: "26mm" }}
         >
           <Image
             src={QR_URL}
@@ -219,19 +198,19 @@ function CardBack() {
         </p>
       </div>
 
-      {/* Bottom tagline */}
-      <div className="absolute inset-x-[5mm] bottom-[4mm] flex items-baseline justify-between">
+      {/* Right bottom: tagline + © */}
+      <div className="absolute right-[5mm] bottom-[4mm] flex w-[30mm] flex-col items-end gap-[1mm]">
         <p
-          className="font-serif-jp italic text-accent"
-          style={{ fontSize: "8pt" }}
+          className="font-serif-jp italic leading-tight text-accent text-right"
+          style={{ fontSize: "7pt" }}
         >
-          丁寧に、長く使える Web を。
+          丁寧に、長く<br />使える Web を。
         </p>
         <p
           className="font-mono uppercase tracking-[0.3em] text-mute"
-          style={{ fontSize: "5pt" }}
+          style={{ fontSize: "4.5pt" }}
         >
-          © 2026
+          © 2026 Maki Kashu
         </p>
       </div>
     </div>
